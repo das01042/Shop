@@ -23,6 +23,7 @@ li {
 }
         </style>
 <body>
+<h3>어서오세요!!!!!!!!!!!!!!!!!!!!!!!</h3>
 	<ul>
 	<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
 	<li><a href="${pageContext.request.contextPath }/adminUser.jsp">회원관리</a>
