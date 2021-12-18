@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 테스트 -->
 <jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="loginmenu.jsp"></jsp:include>
 <h3>로그인 화면</h3>
