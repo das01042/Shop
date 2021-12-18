@@ -1,6 +1,7 @@
 package com.shop.control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,8 @@ public class LoginController implements Controller {
 		String id = req.getParameter("id");
 		String password =req.getParameter("password");
 		
+
+
 		memberService service = new memberService();
 		memberVO vo = service.loginCheck(id, password);
 		HttpSession session = req.getSession();
@@ -28,7 +31,12 @@ public class LoginController implements Controller {
 			req.getRequestDispatcher("index.jsp").forward(req, res);
 		}else {
 			//login.jsp
-			req.getRequestDispatcher("login.jsp").forward(req, res);
+			res.setContentType("text/html; charset=utf-8");
+			PrintWriter	out = res.getWriter();
+			out.println("<script>alert('아이디 또는 비밀번호가 틀립니다.'); "
+					+ "location.href='/shoppingmall/login.jsp';</script>");
+			out.flush();
+			
 		}
 	}
 

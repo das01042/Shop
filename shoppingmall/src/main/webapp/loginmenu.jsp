@@ -26,7 +26,7 @@ li {
 		
 		
 		<li><a href="${pageContext.request.contextPath }/member/memberInput.jsp">회원가입</a></li>
-		<li><a href="${pageContext.request.contextPath }/login.do">로그인</a>
+		<li><a href="${pageContext.request.contextPath }/login.jsp">로그인</a>
 
 	</ul>
 </body>
