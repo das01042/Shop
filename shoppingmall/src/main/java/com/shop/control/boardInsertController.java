@@ -23,7 +23,7 @@ public class boardInsertController implements Controller {
 		vo.setTitle(title);
 		vo.setWriter(writer);
 		
-		//입력처리
+		//입력처리 12312313
 		
 		boardService service = new boardService();
 		service.insert(vo);
