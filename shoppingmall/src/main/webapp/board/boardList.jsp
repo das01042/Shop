@@ -22,7 +22,7 @@ $(document).ready(function(){
 <%	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	if(id==null){
-		response.sendRedirect("../login.jsp");
+		response.sendRedirect("login.jsp");
 	}
 %>
 

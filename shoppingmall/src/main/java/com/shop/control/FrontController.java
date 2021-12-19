@@ -69,6 +69,7 @@ public class FrontController extends HttpServlet {
 		list.put("/ProductComment.do", new PcommentController());
 		// 상품후기 삭제
 		list.put("/PcommentDelete.do", new PcommentDeleteController());
+		
 	}
 
 	@Override

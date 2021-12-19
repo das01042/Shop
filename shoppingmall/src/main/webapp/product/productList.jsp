@@ -60,9 +60,23 @@ margin:5px;
           <div class="desc">
           <%=p.getpDesc() %> 
 		  </div>
-          <div class="salePrice">
+		  
+		  
+		<%if(p.getSalePrice()==0){ 
+			%>
+			<div class="Price">
+	       <%=p.getOriginPrice() %>
+			  </div> <%
+			}else{
+				%>
+          <div class="Price">
+		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice() %></span>
        <%=p.getSalePrice() %>
 		  </div>
+			<%
+			}%>
+		
+		  
        <div class="information">
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=p.getpName() %>'>
