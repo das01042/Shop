@@ -61,5 +61,6 @@ $(document).ready(function(){
 		</tbody>
 	</table>
 	</form>
+	<a href="boardList.do">게시판으로 돌아가기</a>
 </body>
 </html>

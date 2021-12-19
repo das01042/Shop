@@ -10,7 +10,7 @@
 <body>
 
 		
-	<a href="../index.jsp">메인 화면으로</a>
+	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
 	<form action='../boardInsert.do' method='post'>
 	 제목 :<input type='text' name='title'><br>
 	 작성자 :<input type='text' name='writer' value='<%=session.getAttribute("id") %>' readonly><br>

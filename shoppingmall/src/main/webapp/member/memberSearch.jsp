@@ -19,6 +19,7 @@
 	<h3>회원검색</h3>
 	<form action='../memberSearch.do' method='get'>
 		ID: <input type='text' name='id'><br>
+		PW: <input type='text' name='password'><br>
 			<input type='hidden' name='job' value='search'>
 			<input type='submit' value='검색'>
 	</form>

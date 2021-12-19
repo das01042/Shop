@@ -21,6 +21,8 @@ function reload(){
 </script>
 </head>
 <body>
+<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
+
 <%	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	if(id=="admin"|| id!=null){%>
