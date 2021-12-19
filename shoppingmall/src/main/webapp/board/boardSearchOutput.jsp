@@ -21,6 +21,8 @@ function reload(){
 </script>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+
 <a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
 
 <%	String id = (String) session.getAttribute("id");

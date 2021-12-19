@@ -24,6 +24,7 @@ $(document).ready(function(){
 </head>
 
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 
 	<form action='boardSearch.do' id='frd' method='get'>
 		  <input type='hidden' name="job" value='search'>

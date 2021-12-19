@@ -7,7 +7,7 @@
 <title>boardSearch.jsp</title>
 </head>
 <body>
-	
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<form action='../boardSearch.do' method='get'>
 	  제목 : <input type='text' name="title"><br>

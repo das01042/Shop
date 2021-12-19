@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+
 <%boardVO vo =(boardVO) request.getAttribute("board"); %>
 	<table border='1'>
 		<thead>
