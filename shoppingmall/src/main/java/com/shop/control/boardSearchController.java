@@ -23,8 +23,6 @@ public class boardSearchController implements Controller {
 		List<commentVO> cvo= Cservice.commentList(no);
 		boardVO vo =service.searchOne(no);
 		
-		
-		
 		req.setAttribute("board", vo);
 		req.setAttribute("comment", cvo);
 		

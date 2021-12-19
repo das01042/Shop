@@ -1,12 +1,15 @@
 package com.shop.control;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.shop.VO.PcommentVO;
 import com.shop.VO.productVO;
+import com.shop.service.PcommentService;
 import com.shop.service.productService;
 
 public class productSearchController implements Controller {
@@ -17,7 +20,11 @@ public class productSearchController implements Controller {
 		String job = req.getParameter("job");
 		
 		productService service = new productService();
+		PcommentService Pservice = new PcommentService();
+		List<PcommentVO> pvo = Pservice.pcommentList(pname);
 		productVO vo  = service.searchOne(pname);
+		
+		req.setAttribute("Pcomment", pvo);
 		req.setAttribute("product", vo);
 		
 		if(job.equals("search")) {

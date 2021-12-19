@@ -1,3 +1,5 @@
+<%@page import="com.shop.VO.PcommentVO"%>
+<%@page import="java.util.List"%>
 <%@page import="com.shop.VO.productVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,6 +12,7 @@
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
 <jsp:include page="../adminmenu.jsp"></jsp:include>
+	<!-- ==================== 상품 상세조회 ========================= -->
 	<%
 	/* Integer.parseInt("");  */
 	productVO vo = (productVO) request.getAttribute("product");
@@ -32,5 +35,6 @@
 		입력한 수량 : <%=vo.getCount()%></h3>	
 		
 	<%@ include file="../footer.jsp"%>
+	
 </body>
 </html>
