@@ -87,7 +87,17 @@ margin:5px;
       </form>
       <c:set var="id" value="${sessionScope.id }"></c:set>
       <c:if test="${id!='admin' && id!=null }">
+      
+       <c:set var="SalePrice" value="<%=p.getSalePrice() %>"></c:set>
+      <c:choose>
+      <c:when test="${SalePrice==0}">
+      <input type='image' src="image/장바구니.png" width="50" onclick="fnCart( '<%=p.getpName() %>' , <%=p.getOriginPrice() %> )" >
+      </c:when>
+      <c:otherwise>
       <input type='image' src="image/장바구니.png" width="50" onclick="fnCart( '<%=p.getpName() %>' , <%=p.getSalePrice() %> )" >
+      </c:otherwise>
+      </c:choose>
+      
       </c:if>
       </div>
        
