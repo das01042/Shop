@@ -28,6 +28,8 @@
 	<jsp:include page="loginmenu.jsp"></jsp:include>
 	<jsp:include page="searchmenu.jsp"></jsp:include>
 	<jsp:include page="MainMenu.jsp"></jsp:include>
+	<br><br>
+	<jsp:include page="SlideShow.jsp"></jsp:include>
 	<jsp:include page="product/productList.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
