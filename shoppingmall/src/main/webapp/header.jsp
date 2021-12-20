@@ -9,7 +9,7 @@
 <body>
 	<div>
 	<a href="http://localhost/shoppingmall/index.jsp">
-	<img src="upload/header.png">
+	<img src="http://localhost/shoppingmall/upload/head.png">
 	</a>
 	</div>
 </body>

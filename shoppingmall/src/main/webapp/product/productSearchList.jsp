@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>검색출력화면</title>
 <script >
 
 function fnCart(name, price) {
@@ -35,7 +35,39 @@ margin:5px;
 
 </style>
 <body>
-           <jsp:include page="../searchmenu.jsp"></jsp:include>
+<%
+	String id = (String) session.getAttribute("id");
+	String name = (String) session.getAttribute("name");
+	String password = (String) session.getAttribute("password");
+	String email = (String) session.getAttribute("email");
+	if (id == null) {
+%>
+
+<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="../loginmenu.jsp"></jsp:include>
+	<jsp:include page="../searchmenu.jsp"></jsp:include>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+<%
+	} else if(id.equals("admin")) {
+	%>
+
+	<jsp:include page="../header.jsp"></jsp:include>
+	<h3>관리자모드로 접속하셨습니다.</h3>
+	<jsp:include page="../adminmenu.jsp"></jsp:include>
+	<jsp:include page="../searchmenu.jsp"></jsp:include>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<%
+		} else {
+			%> 
+			<jsp:include page="../header.jsp"></jsp:include>
+			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
+			<jsp:include page="../logoutmenu.jsp"></jsp:include>
+			<jsp:include page="../searchmenu.jsp"></jsp:include>
+			<jsp:include page="../MainMenu.jsp"></jsp:include>
+		<%
+		}
+	%>
+	<br><br>
             <br><br><br>
 
 	<section>
@@ -55,9 +87,22 @@ margin:5px;
           <div class="desc">
           <%=p.getpDesc() %> 
           </div>
-          <div class="salePrice">
+       
+          <%if(p.getSalePrice()==0){ 
+			%>
+			<div class="Price">
+	       <%=p.getOriginPrice() %>
+			  </div> <%
+			}else{
+				%>
+          <div class="Price">
+		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice() %></span>
        <%=p.getSalePrice() %>
-       </div>
+		  </div>
+			<%
+			}%>
+       
+       
        <div class="information">
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=p.getpName() %>'>

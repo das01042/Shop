@@ -23,6 +23,7 @@ function fnCart(name, price) {
 </script>
 </head>
 <body>
+
 <%
 	productVO vo = (productVO) request.getAttribute("product");
 	%>
@@ -48,6 +49,10 @@ function fnCart(name, price) {
 	}
 %>
 		<jsp:include page="../header.jsp"></jsp:include>
+		<form action='productSearchTool.do' method='get'>
+		검색: <input type='text' name='pName' placeholder="상품을 검색하세요."><br>
+			<input type='submit' value='검색'>
+	</form>
 	<table id='product'>
 		<tr>
 			<th>상품이미지</th>
