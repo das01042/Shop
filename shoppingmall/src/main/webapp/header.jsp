@@ -5,9 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
-	<div>
+	<div class="title_header">
 	<a href="http://localhost/shoppingmall/index.jsp">
 	<img src="http://localhost/shoppingmall/upload/head.png">
 	</a>

@@ -6,6 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>boardList.jsp</title>
+<link rel="stylesheet" href="css/boardListStyle.css">
+<style>
+*{
+margin: 10px auto;
+}
+body{
+	
+	text-align: center;
+}
+table{
+width : 70%;
+}
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -26,11 +40,12 @@ $(document).ready(function(){
 	String email = (String) session.getAttribute("email");
 	if (id == null) {
 %>
-
+<div class="header">
 <jsp:include page="../header.jsp"></jsp:include>
 	<jsp:include page="../loginmenu.jsp"></jsp:include>
 	
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	</div>
 <%
 	} else if(id.equals("admin")) {
 	%>
@@ -53,19 +68,18 @@ $(document).ready(function(){
 	%>
 	<br><br>
 	<h2>[자유게시판]</h2>
-	<a href="board/boardInput.jsp">게시글 작성</a>
+	
 	<h3>게시판 목록</h3>
 	<form action='boardSearch.do' id='frd' method='get'>
 		  <input type='hidden' name="job" value='search'>
 		  <input type='hidden' name="id" value='<%=id %>'>
 	<input type='hidden' name='no' id='no'>
-	<table border="1">
+	<table>
 		<thead>
 			<tr>
-				<th>게시판 번호</th>
-				<th>제목</th>
-				<th>작성자</th>
-				
+				<th>번호</th>
+				<th> 제목 </th>
+				<th> 작성자 </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -77,9 +91,9 @@ $(document).ready(function(){
 				</tr>
 			</c:forEach>
 		</tbody>
-
 	</table>
 	</form>
+	<button type="button" onclick="location.href='board/boardInput.jsp'">글작성</button>
 	<!-- ============================검색창==================== -->
 	<div>
 		<div>
