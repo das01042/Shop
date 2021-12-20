@@ -36,7 +36,52 @@ public class memberDAO extends DAO{
 				return null;
 		}
 	
-	
+	//아이디 찾기 (이름 , 이메일)
+		public String findId(String name, String email) {
+			String sql = "select id from member where name = ? and email= ?";
+			connect();
+			String id = null;
+			try {
+				psmt=conn.prepareStatement(sql);
+				psmt.setString(1, name);
+				psmt.setString(2, email);
+				rs=psmt.executeQuery();
+				if(rs.next()) {
+					id=rs.getString("id");
+				System.out.println(id);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				disconnect();
+			}
+			return id;
+		}
+		
+	//비밀번호 찾기 ( 아이디, 이름 , 이메일 )
+		public String findPassword(String id,String name,String email) {
+			String sql = "select password from member where id = ? and name=? and email=?";
+			connect();
+			String pw=null;
+			
+			try {
+				psmt=conn.prepareStatement(sql);
+				psmt.setString(1, id);
+				psmt.setString(2, name);
+				psmt.setString(3, email);
+				
+				rs=psmt.executeQuery();
+				if(rs.next()) {
+					pw=rs.getString("password");
+				System.out.println(pw);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				disconnect();
+			}
+			return pw;
+		}
 	
 	
 	//전체리스트.

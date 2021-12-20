@@ -32,6 +32,7 @@
 	<jsp:include page="MainMenu.jsp"></jsp:include>
 	<jsp:include page="product/productList.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
+	
 <%
 	} else if(id.equals("admin")) {
 	%>

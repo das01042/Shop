@@ -7,7 +7,7 @@
 <title>boardSearch.jsp</title>
 </head>
 <body>
-	
+	<jsp:include page="../header.jsp"></jsp:include>
 	
 	<form action='../boardSearch.do' method='get'>
 	  제목 : <input type='text' name="title"><br>
@@ -15,6 +15,6 @@
 		  <input type='hidden' name ='no'>
 		  <input type='submit' value='검색'>
 	</form>
-	
+	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
 </body>
 </html>

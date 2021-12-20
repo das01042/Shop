@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+
 	<%
 	boardVO vo = (boardVO) request.getAttribute("board");
 	String id = (String) session.getAttribute("id");
@@ -22,6 +24,7 @@
 		<h3>삭제버튼을 누르면 해당 게시판을 삭제합니다</h3>
 		<input type='submit' value='삭제'>
 	</form>
+	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
 	<%}else{ %>
 	<script>
 		alert("권한이 없습니다");

@@ -6,12 +6,23 @@ import com.shop.DAO.memberDAO;
 import com.shop.VO.memberVO;
 
 public class memberService {
+	memberDAO dao = new memberDAO();
+	
+	
 	//로그인 체크
 	public memberVO loginCheck(String id, String pw) {
 		return dao.loginCheck(id, pw);
 	}
+	//아이디찾기
+	public String findId(String name,String email) {
+		return dao.findId(name, email);
+	}
+	//비밀번호찾기
+	public String findPw(String id,String name,String email) {
+		return dao.findPassword(id, name, email);
+	}
 	
-	memberDAO dao = new memberDAO();
+	
 	//회원 리스트
 	public List<memberVO> searchAll(){
 		return dao.memberList();

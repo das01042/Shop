@@ -24,6 +24,7 @@ $(document).ready(function(){
 </head>
 
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 
 	<form action='boardSearch.do' id='frd' method='get'>
 		  <input type='hidden' name="job" value='search'>
@@ -61,5 +62,6 @@ $(document).ready(function(){
 		</tbody>
 	</table>
 	</form>
+	<a href="boardList.do">게시판으로 돌아가기</a>
 </body>
 </html>

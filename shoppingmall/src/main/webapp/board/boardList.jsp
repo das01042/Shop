@@ -19,6 +19,8 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+
 <%	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
 	if(id==null){
@@ -71,6 +73,7 @@ $(document).ready(function(){
 			</form>
 		</div>
 	</div>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	
 </body>
 </html>

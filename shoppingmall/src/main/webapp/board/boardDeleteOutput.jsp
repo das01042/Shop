@@ -8,11 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
+
 	<%
 	boardVO vo = (boardVO) request.getAttribute("board");
 	%>
 	<h1><%=vo.getNo()%>번 정상적으로 삭제가 완료되었습니다.
 	</h1>
 	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
+	
 </body>
 </html>

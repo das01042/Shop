@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../header.jsp"></jsp:include>
 
 	<%boardVO vo = (boardVO) request.getAttribute("board");
 	String id = (String) session.getAttribute("id");
@@ -19,6 +20,8 @@
 		작성자<input type ='text' name ='writer' value='<%=vo.getWriter() %>'readonly><br>
 		<input type='submit' value='수정'>
 	</form>
+	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
+	
 	<%}else{%>
 		<script>
 		alert("권한이 없습니다");
