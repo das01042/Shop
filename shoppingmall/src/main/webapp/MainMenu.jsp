@@ -49,15 +49,15 @@ nav ul li {
 
 			<li><a href="#">캐릭터 인형</a>
 				<ul>
-					<li><a href="#">Sub Menu 1</a></li>
-					<li><a href="#">Sub Menu 2</a></li>
-					<li><a href="#">Sub Menu 3</a></li>
+					<li><a href="#">포켓몬스터</a></li>
+					<li><a href="#">짱구</a></li>
+					<li><a href="#">도라에몽</a></li>
 				</ul></li>
 			<li><a href="#">동물 인형</a>
 				<ul>
-					<li><a href="#">Sub Menu 1</a></li>
-					<li><a href="#">Sub Menu 2</a></li>
-					<li><a href="#">Sub Menu 3</a></li>
+					<li><a href="#">강아지인형</a></li>
+					<li><a href="#">곰인형</a></li>
+					<li><a href="#">펭귄인형</a></li>
 				</ul></li>
 			<li><a
 				href="${pageContext.request.contextPath }/product/Product1000.jsp">싹다

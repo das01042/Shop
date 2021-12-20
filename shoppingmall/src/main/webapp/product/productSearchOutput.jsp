@@ -61,14 +61,17 @@ function fnCart(name, price) {
 			<th>상품설명</th>
 			<td><%=vo.getpDesc()%></td>
 		</tr>
+		
 		<tr>
 			<th>원래가격</th>
 			<td><%=vo.getOriginPrice()%></td>
 		</tr>
+		<%if(vo.getSalePrice()!=0){ %>
 		<tr>
 			<th>할인가격</th>
 			<td><%=vo.getSalePrice()%></td>
 		</tr>
+		<%} %>
 		<tr>
 			<th>별점</th>
 			<td><%=vo.getStar()%></td>
