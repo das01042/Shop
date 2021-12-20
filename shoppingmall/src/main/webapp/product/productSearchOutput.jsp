@@ -1,3 +1,5 @@
+<%@page import="com.shop.VO.PcommentVO"%>
+<%@page import="java.util.List"%>
 <%@page import="com.shop.VO.productVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -100,5 +102,49 @@ function fnCart(name, price) {
 	  </c:if>
       </tr>
 	</table>
+	
+	 <!-- =============================댓글 등록 및 리스트================================ -->
+	<%List<PcommentVO> pvo =(List<PcommentVO>) request.getAttribute("Pcomment"); %>
+	<form method="post" action="ProductComment.do">
+	<input type="hidden" name="pName" value='<%=vo.getpName() %>'>
+	<input type="hidden" name="job" value="search">
+		<table>
+			<tr>
+				<td colspan="2" align="left">
+					<b>상품 후기</b>
+				</td>
+			</tr>
+			
+			<tr>
+				<td><input type="text" name="writer"  size="8" value="${sessionScope.id }" readonly></td>
+				<td colspan="2"><input type="text" name="content" placeholder="후기내용" size="30"></td>
+				<td><input type="submit" value="등록"></td>
+			</tr>
+			</table>
+				</form>
+			<table>
+			<tr>
+				<td>닉네임</td>
+				<td colspan="2">내용</td>
+			
+			<c:forEach var="item" items="${requestScope.Pcomment }">
+				<tr>
+					<td>${item.pcommentWriter }</td>
+					<td colspan="2">${item.pcommentCont }</td>
+      <!-- =============================후기 리스트, 삭제 =========================-->
+      <c:set var="id" value="${sessionScope.id }"></c:set>
+      <c:set var="p_id" value="${item.pcommentWriter }"></c:set>
+      <c:if test="${id=='admin' || id==p_id}">
+      <td> <form action='PcommentDelete.do' method='get' >
+						<input type = 'hidden' name='pcomment_no' value='${item.pcommentNo }'>
+						<input type = 'hidden' name='pName' value='${item.pcommentPname }'>
+						<input type = 'hidden' name ='job' value='search'>
+						<input type= 'submit' value='삭제'>
+			</form></td>
+		</c:if>
+				</tr>
+			
+			</c:forEach>
+			</table>
 </body>
 </html>

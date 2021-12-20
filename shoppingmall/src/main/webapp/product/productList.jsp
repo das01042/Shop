@@ -1,3 +1,4 @@
+<%@page import="com.shop.VO.PcommentVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.shop.DAO.productDAO"%>
 <%@page import="com.shop.service.productService"%>
@@ -59,12 +60,27 @@ margin:5px;
           <div class="desc">
           <%=p.getpDesc() %> 
 		  </div>
-          <div class="salePrice">
+		  
+		  
+		<%if(p.getSalePrice()==0){ 
+			%>
+			<div class="Price">
+	       <%=p.getOriginPrice() %>
+			  </div> <%
+			}else{
+				%>
+          <div class="Price">
+		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice() %></span>
        <%=p.getSalePrice() %>
 		  </div>
+			<%
+			}%>
+		
+		  
        <div class="information">
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=p.getpName() %>'>
+      <input type='hidden' name='pId' value='<%=p.getpId() %>'>
       <input type='hidden' name='job' value='search'>
       <input type='submit' value='상세조회'>
       
@@ -78,9 +94,9 @@ margin:5px;
        </div>
        
     <%   
-    
      }
       %> 
+     
 </div>
 </section>
    

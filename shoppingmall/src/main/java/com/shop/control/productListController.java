@@ -14,6 +14,7 @@ public class productListController implements Controller {
 
 	@Override
 	public void excute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
 		productService service = new productService();
 		List<productVO> list = service.searchAll();
 		
