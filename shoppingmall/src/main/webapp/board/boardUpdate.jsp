@@ -18,6 +18,7 @@
 		제목<input type ='text' name='title' value='<%=vo.getTitle() %>'><br>
 		내용<textarea name = 'content'><%=vo.getContent() %></textarea><br>
 		작성자<input type ='text' name ='writer' value='<%=vo.getWriter() %>'readonly><br>
+		<input type ='hidden' name ='id' value='<%=vo.getWriter() %>'><br>
 		<input type='submit' value='수정'>
 	</form>
 	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>

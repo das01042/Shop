@@ -27,6 +27,7 @@ commentVO vo =(commentVO) request.getAttribute("board"); %>
 				<td><input type="text" name="writer"  size="8" value="${sessionScope.id }"></td>
 				<td><input type="text" name="content" placeholder="댓글내용" size="30"></td>
 				<td><input type="password" name="pwd" placeholder="비밀번호" size="8"></td>
+				<td><input type="hidden" name="id" value="<%=vo.getCommentWriter()%>"></td>
 				<td><input type="submit" value="등록"></td>
 			</tr>
 			

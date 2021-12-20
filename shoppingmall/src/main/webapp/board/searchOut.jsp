@@ -25,9 +25,10 @@ $(document).ready(function(){
 
 <body>
 <jsp:include page="../header.jsp"></jsp:include>
-
+<c:set var="id" value="${sessionScope.id }"></c:set>
 	<form action='boardSearch.do' id='frd' method='get'>
 		  <input type='hidden' name="job" value='search'>
+		  <input type ='hidden' name ='id' value='id'>
 	<input type='hidden' name='no' id='no'>
 	<table border = '1'>
 	<thead>

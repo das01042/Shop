@@ -63,12 +63,14 @@ function reload(){
 	<form action='boardSearch.do' method='get' class="C_Form">
 		<input type = 'hidden' name='no' value='<%=vo.getNo() %>'>
 		<input type = 'hidden' name ='job' value='update'>
+		<input type ='hidden' name ='id' value='<%=vo.getWriter() %>'>
 		<input type= 'submit' value='수정' class="F_submit">
 	</form>
 	<!-- ============================삭제=============================== -->
 	<form action='boardSearch.do' method='get' class="C_Form">
 		<input type = 'hidden' name='no' value='<%=vo.getNo() %>'>
 		<input type = 'hidden' name ='job' value='delete'>
+		<input type ='hidden' name ='id' value='<%=vo.getWriter() %>'>
 		<input type= 'submit' value='삭제' class="F_submit">
 	</form>
 	<%List<commentVO> cvo =(List<commentVO>) request.getAttribute("comment"); %>
@@ -85,10 +87,11 @@ function reload(){
 			</tr>
 			
 			<tr>
+			<c:set var="id" value="${sessionScope.id }"></c:set>
 				<td><input type="text" name="writer"  size="8" value="${sessionScope.id }" readonly></td>
 				<td colspan="2"><input type="text" name="content" placeholder="댓글내용" size="30"></td>
 				<td><input type="password" name="pwd" placeholder="비밀번호" size="8"></td>
-				
+				<td><input type="hidden" name="id" value="id"></td>
 				<td><input type="submit" value="등록"></td>
 			</tr>
 			</table>
@@ -114,6 +117,7 @@ function reload(){
 						<input type = 'hidden' name='comment_no' value='${item.commentNo }'>
 						<input type = 'hidden' name='no' value='${item.commentBoardNo }'>
 						<input type = 'hidden' name ='job' value='search'>
+						<input type="hidden" name="id" value="id">
 						<input type= 'submit' value='삭제'>
 			</form></td>
 		</c:if>
