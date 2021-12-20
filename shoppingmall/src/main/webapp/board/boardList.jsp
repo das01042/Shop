@@ -9,14 +9,21 @@
 <link rel="stylesheet" href="css/boardListStyle.css">
 <style>
 *{
-margin: 10px auto;
+	margin: 10px auto;
 }
 body{
 	
 	text-align: center;
 }
-table{
-width : 70%;
+.List{
+	width : 70%;
+	height : 30vh;
+}
+.actionTd{
+	cursor:pointer;
+}
+.b_write{
+text-align : right;
 }
 
 </style>
@@ -30,6 +37,7 @@ $(document).ready(function(){
 		$('#frd').submit();
 	});
 });
+
 </script>
 </head>
 <body>
@@ -40,29 +48,33 @@ $(document).ready(function(){
 	String email = (String) session.getAttribute("email");
 	if (id == null) {
 %>
-<div class="header">
+
+<jsp:include page="../loginmenu.jsp"></jsp:include>
 <jsp:include page="../header.jsp"></jsp:include>
-	<jsp:include page="../loginmenu.jsp"></jsp:include>
-	
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
-	</div>
+	
 <%
 	} else if(id.equals("admin")) {
 	%>
 
-	<jsp:include page="../header.jsp"></jsp:include>
-	<h3>관리자모드로 접속하셨습니다.</h3>
 	<jsp:include page="../adminmenu.jsp"></jsp:include>
+	<jsp:include page="../header.jsp"></jsp:include>
+	
+	<h3>관리자모드로 접속하셨습니다.</h3>
+	
 	
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
 	<%
 		} else {
-			%> 
+			%>
+			<div class="header">
+			<jsp:include page="../logoutmenu.jsp"></jsp:include>
 			<jsp:include page="../header.jsp"></jsp:include>
 			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
-			<jsp:include page="../logoutmenu.jsp"></jsp:include>
+			
 			
 			<jsp:include page="../MainMenu.jsp"></jsp:include>
+			</div>
 		<%
 		}
 	%>
@@ -74,7 +86,7 @@ $(document).ready(function(){
 		  <input type='hidden' name="job" value='search'>
 		  <input type='hidden' name="id" value='<%=id %>'>
 	<input type='hidden' name='no' id='no'>
-	<table>
+	<table class="List">
 		<thead>
 			<tr>
 				<th>번호</th>
@@ -93,7 +105,7 @@ $(document).ready(function(){
 		</tbody>
 	</table>
 	</form>
-	<button type="button" onclick="location.href='board/boardInput.jsp'">글작성</button>
+	<button class="b_write" type="button" onclick="location.href='board/boardInput.jsp'">글작성</button>
 	<!-- ============================검색창==================== -->
 	<div>
 		<div>

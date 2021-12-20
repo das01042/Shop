@@ -22,6 +22,7 @@ li {
 }
 </style>
 <body>
+<div>
 <ul>
 		<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
 		<li><a href="${pageContext.request.contextPath }/member/memberInput.jsp">회원등록</a></li>
@@ -31,5 +32,6 @@ li {
 
 
 	</ul>
+	</div>
 </body>
 </html>
