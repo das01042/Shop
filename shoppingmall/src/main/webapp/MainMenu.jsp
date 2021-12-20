@@ -64,7 +64,7 @@ nav ul li {
 					천원</a></li>
 			<li><a
 				href="${pageContext.request.contextPath }/product/ProductSale.jsp">할인상품</a></li>
-			<li><a href="${pageContext.request.contextPath }/boardList.do">게시판</a></li>
+			<li><a href="${pageContext.request.contextPath }/boardList.do">자유게시판</a></li>
 		</ul>
 	</nav>
 

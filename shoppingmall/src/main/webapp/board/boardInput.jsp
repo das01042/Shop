@@ -9,8 +9,37 @@
 <title>boardInput.jsp</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
-		
+<%
+	String id = (String) session.getAttribute("id");
+	String name = (String) session.getAttribute("name");
+	String password = (String) session.getAttribute("password");
+	String email = (String) session.getAttribute("email");
+	if (id==null) {
+String script = "<script>alert('로그인이 필요합니다.'); "
+		+ "location.href='/shoppingmall/login.jsp';</script>";
+		out.println(script);
+			out.flush();
+
+	} else if(id.equals("admin")) {
+	%>
+
+	<jsp:include page="../header.jsp"></jsp:include>
+	<h3>관리자모드로 접속하셨습니다.</h3>
+	<jsp:include page="../adminmenu.jsp"></jsp:include>
+	
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<%
+		} else {
+			%> 
+			<jsp:include page="../header.jsp"></jsp:include>
+			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
+			<jsp:include page="../logoutmenu.jsp"></jsp:include>
+			
+			<jsp:include page="../MainMenu.jsp"></jsp:include>
+		<%
+		}
+	%>
+	<br><br>
 	
 	<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
 	<form action='../boardInsert.do' method='post'>

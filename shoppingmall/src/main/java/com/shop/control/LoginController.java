@@ -23,6 +23,7 @@ public class LoginController implements Controller {
 		memberService service = new memberService();
 		memberVO vo = service.loginCheck(id, password);
 		HttpSession session = req.getSession();
+	
 		
 		if(vo!=null) {
 			//index.jsp

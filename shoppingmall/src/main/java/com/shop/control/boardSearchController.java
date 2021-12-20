@@ -1,11 +1,13 @@
 package com.shop.control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.shop.VO.boardVO;
 import com.shop.VO.commentVO;
@@ -18,6 +20,7 @@ public class boardSearchController implements Controller {
 	public void excute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String no = req.getParameter("no");
 		String job = req.getParameter("job");
+		String id = req.getParameter("id");
 		boardService service = new boardService();
 		commentService Cservice= new commentService();
 		List<commentVO> cvo= Cservice.commentList(no);
@@ -26,6 +29,8 @@ public class boardSearchController implements Controller {
 		req.setAttribute("board", vo);
 		req.setAttribute("comment", cvo);
 		
+		
+		if(!id.equals("null")) {
 		if(job.equals("search")) {
 			req.getRequestDispatcher("board/boardSearchOutput.jsp").forward(req, res);
 			
@@ -34,7 +39,13 @@ public class boardSearchController implements Controller {
 		}else if(job.equals("delete")) {
 			req.getRequestDispatcher("board/boardDelete.jsp").forward(req, res);
 		}
-		
+		}else {
+			res.setContentType("text/html; charset=utf-8");
+			PrintWriter	out = res.getWriter();
+			out.println("<script>alert('로그인이 필요합니다.'); "
+					+ "location.href='/shoppingmall/login.jsp';</script>");
+			out.flush();	
+		}	
 	}
 
 }

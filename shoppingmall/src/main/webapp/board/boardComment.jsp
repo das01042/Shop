@@ -9,6 +9,7 @@
 <title>boardComment.jsp</title>
 </head>
 <body>
+
 <!-- 연동된 페이지 아님!!(백업본)  boardSearchOut.jsp쪽 연동중!!!!!-->
 <%
 commentVO vo =(commentVO) request.getAttribute("board"); %>

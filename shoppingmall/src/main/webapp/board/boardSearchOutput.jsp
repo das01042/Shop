@@ -21,13 +21,34 @@ function reload(){
 </script>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
-
-<a href="${pageContext.request.contextPath }/boardList.do">게시판 돌아가기</a>
-
 <%	String id = (String) session.getAttribute("id");
 	String password = (String) session.getAttribute("password");
-	if(id=="admin"|| id!=null){%>
+	
+	 if(id.equals("admin")) {
+	%>
+	<jsp:include page="../header.jsp"></jsp:include>
+	<h3>관리자모드로 접속하셨습니다.</h3>
+	<jsp:include page="../adminmenu.jsp"></jsp:include>
+	<form action='../productSearchTool.do' method='get'>
+		검색: <input type='text' name='pName' placeholder="상품을 검색하세요."><br>
+			<input type='submit' value='검색'>
+	</form>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<%
+		} else{
+			%> 
+			<jsp:include page="../header.jsp"></jsp:include>
+			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
+			<jsp:include page="../logoutmenu.jsp"></jsp:include>
+			<form action='../productSearchTool.do' method='get'>
+		검색: <input type='text' name='pName' placeholder="상품을 검색하세요."><br>
+			<input type='submit' value='검색'>
+			</form>
+			<jsp:include page="../MainMenu.jsp"></jsp:include>
+		<%
+		}
+	%>
+	<br><br>
 	<%boardVO vo =(boardVO) request.getAttribute("board"); %>
 	<div class="containerBox">
 			<div class="Header">
@@ -104,10 +125,7 @@ function reload(){
 
 	</div>
 			
-	<% }else {
-	%><script>alert("로그인이 필요합니다")</script>
-	<%response.sendRedirect("boradList.do");
-	}%>
+	
 
 
 
