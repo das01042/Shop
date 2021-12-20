@@ -106,6 +106,7 @@ function fnCart(name, price) {
       </tr>
 	</table>
 	
+	<c:if test="${id!=null}">
 	 <!-- =============================댓글 등록 및 리스트================================ -->
 	<%List<PcommentVO> pvo =(List<PcommentVO>) request.getAttribute("Pcomment"); %>
 	<form method="post" action="ProductComment.do">
@@ -125,6 +126,7 @@ function fnCart(name, price) {
 			</tr>
 			</table>
 				</form>
+				 </c:if>
 			<table>
 			<tr>
 				<td>닉네임</td>

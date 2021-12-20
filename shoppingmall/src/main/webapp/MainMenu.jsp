@@ -45,19 +45,19 @@ nav ul li {
 	<nav>
 		<ul>
 
-			<li><a href="#">대형 인형</a></li>
+			<li><a href="${pageContext.request.contextPath }/product/ProductBig.jsp">대형인형</a></li>
 
-			<li><a href="#">캐릭터 인형</a>
+			<li><a href="${pageContext.request.contextPath }/product/ProductCharacter.jsp">캐릭터인형</a>
 				<ul>
-					<li><a href="#">포켓몬스터</a></li>
-					<li><a href="#">짱구</a></li>
-					<li><a href="#">도라에몽</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductPoketmon.jsp">포켓몬스터</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductJJanggu.jsp">짱구</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductDoraemong.jsp">도라에몽</a></li>
 				</ul></li>
-			<li><a href="#">동물 인형</a>
+			<li><a href="${pageContext.request.contextPath }/product/ProductAnimal.jsp">동물인형</a>
 				<ul>
-					<li><a href="#">강아지인형</a></li>
-					<li><a href="#">곰인형</a></li>
-					<li><a href="#">펭귄인형</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductDog.jsp">강아지인형</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductBear.jsp">곰인형</a></li>
+					<li><a href="${pageContext.request.contextPath }/product/ProductCat.jsp">고양이인형</a></li>
 				</ul></li>
 			<li><a
 				href="${pageContext.request.contextPath }/product/Product1000.jsp">싹다

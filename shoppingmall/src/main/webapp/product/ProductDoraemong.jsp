@@ -67,13 +67,13 @@ margin:5px;
 		}
 	%>
 	<br><br>
-	<h2> [대형 인형] </h2>
+	<h2> [도라에몽] </h2>
 <section>
       <div class="outProduct">
 <% productService service = new productService();
 		List<productVO> list = service.searchAll();
       for(productVO p:list){  
-      if(p.getpName().contains("[대형]")){
+      if(p.getpName().contains("[도라에몽]") && p.getpName().contains("[캐릭터]")){
       %>
   	<div class="inProduct">
       <div class="image">

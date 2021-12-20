@@ -67,12 +67,13 @@ margin:5px;
 		}
 	%>
 	<br><br>
+	<h2> [천원샵] </h2>
 <section>
       <div class="outProduct">
 <% productService service = new productService();
 		List<productVO> list = service.searchAll();
       for(productVO p:list){  
-      if(p.getSalePrice()==0 && p.getOriginPrice()==1000){
+      if(p.getSalePrice()==1000 || p.getOriginPrice()==1000){
       %>
   	<div class="inProduct">
       <div class="image">
@@ -84,9 +85,19 @@ margin:5px;
           <div class="desc">
           <%=p.getpDesc() %> 
 		  </div>
+          <%if(p.getSalePrice()==0){ 
+			%>
+			<div class="Price">
+	       <%=p.getOriginPrice() %>
+			  </div> <%
+			}else{
+				%>
           <div class="Price">
-		  <%=p.getOriginPrice() %>
+		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice() %></span>
+       <%=p.getSalePrice() %>
 		  </div>
+			<%
+			}%>
 			
 		
 		  
