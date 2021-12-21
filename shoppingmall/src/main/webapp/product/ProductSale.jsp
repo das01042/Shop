@@ -22,7 +22,8 @@ function fnCart(name, price) {
 .outProduct {
 display : flex;
 flex-wrap: wrap;
-
+text-align:center;
+margin-left:105px;
 }
 .inProduct{
 width: 400px;

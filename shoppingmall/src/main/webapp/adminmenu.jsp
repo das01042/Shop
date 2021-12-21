@@ -8,13 +8,13 @@
 </head>
   <style>
   
-ul {
+.adminmenu ul {
     list-style:none;
     margin:0 30px;
     padding:0 300px 0 0;
 }
 
-li {
+.adminmenu li {
 
     margin: 0 0 0 5px;
     padding: 0 0 0 0;
@@ -23,11 +23,12 @@ li {
 }
         </style>
 <body>
-<h3>어서오세요!!!!!!!!!!!!!!!!!!!!!!!</h3>
+<div class="adminmenu">
 	<ul>
 	<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
 	<li><a href="${pageContext.request.contextPath }/adminUser.jsp">회원관리</a>
 	<li><a href="${pageContext.request.contextPath }/adminProduct.jsp">상품관리</a>
     </ul>
+    </div>
 </body>
 </html>
