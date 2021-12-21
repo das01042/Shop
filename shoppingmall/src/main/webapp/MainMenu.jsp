@@ -16,13 +16,13 @@ a {
 a:hover {
 	color: #ff0000;
 } /* nav tag */
-nav ul {
+.main nav ul {
 	padding-top: 10px;
 } /* 상단 여백 10px */
-nav ul ul{
+.main nav ul ul{
 	display:none;
 }
-nav  ul li:hover ul {
+.main nav  ul li:hover ul {
  display: block;
  padding-right:0;
 }
@@ -32,7 +32,7 @@ nav  ul li:hover ul {
 /* float:none; */
 /* margin-top:3px; */
 /* } */
-nav ul li {
+.main nav ul li {
 	float: left;
 	list-style-type: none;
 	border-left: 1px solid #999; /* 각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
@@ -42,6 +42,7 @@ nav ul li {
 </style>
 </head>
 <body>
+<div class="main">
 	<nav>
 		<ul>
 
@@ -67,6 +68,6 @@ nav ul li {
 			<li><a href="${pageContext.request.contextPath }/boardList.do">자유게시판</a></li>
 		</ul>
 	</nav>
-
+</div>
 </body>
 </html>
