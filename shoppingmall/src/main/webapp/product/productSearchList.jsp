@@ -42,24 +42,22 @@ margin:5px;
 	String email = (String) session.getAttribute("email");
 	if (id == null) {
 %>
-
+<jsp:include page="../loginmenu.jsp"></jsp:include>
 <jsp:include page="../header.jsp"></jsp:include>
-	<jsp:include page="../loginmenu.jsp"></jsp:include>
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
 <%
 	} else if(id.equals("admin")) {
 	%>
-
+	<jsp:include page="../adminmenu.jsp"></jsp:include>
 	<jsp:include page="../header.jsp"></jsp:include>
 	<h3>관리자모드로 접속하셨습니다.</h3>
-	<jsp:include page="../adminmenu.jsp"></jsp:include>
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
 	<%
 		} else {
 			%> 
+			<jsp:include page="../logoutmenu.jsp"></jsp:include>
 			<jsp:include page="../header.jsp"></jsp:include>
 			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
-			<jsp:include page="../logoutmenu.jsp"></jsp:include>
 			<jsp:include page="../MainMenu.jsp"></jsp:include>
 		<%
 		}

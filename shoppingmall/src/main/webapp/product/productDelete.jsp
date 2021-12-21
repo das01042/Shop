@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
 <jsp:include page="../adminmenu.jsp"></jsp:include>
+<jsp:include page="productHeader.jsp"></jsp:include>
 
 <h3>상품삭제</h3>
+
 	<form action='../productSearch.do' method='get'>
 		상품이름: <input type='text' name='pName'><br>
 			<input type='hidden' name='job' value='delete'>

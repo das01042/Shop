@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="productHeader.jsp"></jsp:include>
+<form class="search_menu" action='../productSearchTool.do' method='get'>
+			<input type='text' name='pName' placeholder="상품을 검색하세요.">
+			<input type='submit' value='검색'>
+	</form>
 <jsp:include page="../adminmenu.jsp"></jsp:include>
 
 <h3>상품수정</h3>

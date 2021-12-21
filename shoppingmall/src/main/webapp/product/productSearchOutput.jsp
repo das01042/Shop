@@ -45,14 +45,13 @@ function fnCart(name, price) {
     </script>
 		<%
 	} else{
-		%><jsp:include page="../logoutmenu.jsp"></jsp:include><%
+		%><jsp:include page="../logoutmenu.jsp"></jsp:include>
+		<jsp:include page="../searchmenu.jsp"></jsp:include><%
+				
 	}
 %>
-		<jsp:include page="../header.jsp"></jsp:include>
-		<form action='productSearchTool.do' method='get'>
-		검색: <input type='text' name='pName' placeholder="상품을 검색하세요."><br>
-			<input type='submit' value='검색'>
-	</form>
+		<jsp:include page="productHeader.jsp"></jsp:include>
+		
 	<table id='product'>
 		<tr>
 			<th>상품이미지</th>
