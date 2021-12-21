@@ -46,11 +46,11 @@ function fnCart(name, price) {
 		<%
 	} else{
 		%><jsp:include page="../logoutmenu.jsp"></jsp:include>
-		<jsp:include page="../searchmenu.jsp"></jsp:include><%
+		<%
 				
 	}
 %>
-		<jsp:include page="productHeader.jsp"></jsp:include>
+		<jsp:include page="../header.jsp"></jsp:include>
 		
 	<table id='product'>
 		<tr>
@@ -119,6 +119,7 @@ function fnCart(name, price) {
 		<table>
 			<tr>
 				<td colspan="2" align="left">
+				<br><br>
 					<b>상품 후기</b>
 				</td>
 			</tr>
@@ -131,6 +132,9 @@ function fnCart(name, price) {
 			</table>
 				</form>
 				 </c:if>
+				 <br><br>
+				 <b>상품 후기</b>
+				 <br><br>
 			<table>
 			<tr>
 				<td>닉네임</td>
@@ -155,5 +159,6 @@ function fnCart(name, price) {
 			
 			</c:forEach>
 			</table>
+			<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
