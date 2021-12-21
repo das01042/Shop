@@ -32,7 +32,7 @@
 			</td>
 			<td width="550px">
 			<td>
-			<form class="search_menu" action='productSearchTool.do' method='get'>
+			<form class="search_menu" action='../productSearchTool.do' method='get'>
 			<input class="search_input" type='text' name='pName' placeholder="상품을 검색하세요.">
 			<input id="s_input2" class="search_input" type='submit' value='검색'></form>
 			

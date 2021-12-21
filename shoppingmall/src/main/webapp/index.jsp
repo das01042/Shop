@@ -10,6 +10,9 @@
 h3{
 margin : 0px auto;
 }
+body > div.main > nav > ul > li:nth-child(3) > ul{
+	display: none;
+}
 </style>
 </head>
 <body>
