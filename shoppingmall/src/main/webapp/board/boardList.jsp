@@ -8,6 +8,7 @@
 <title>boardList.jsp</title>
 <link rel="stylesheet" href="css/boardListStyle.css">
 <style>
+
  body {
 	text-align: center;
 } 
@@ -52,6 +53,7 @@
 .search_button {
 	width: 50px;
 }
+
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -93,13 +95,10 @@
 	<%
 	} else {
 	%>
-	<div class="header">
+	<div class="L_header">
 		<jsp:include page="../logoutmenu.jsp"></jsp:include>
 		<jsp:include page="../header.jsp"></jsp:include>
-		<h3><%=session.getAttribute("name")%>고객님, 환영합니다~
-		</h3>
-
-
+		<h3><%=session.getAttribute("name")%>고객님, 환영합니다~</h3>
 		<jsp:include page="../MainMenu.jsp"></jsp:include>
 	</div>
 	<%
@@ -108,7 +107,6 @@
 	<br>
 	<br>
 	<h2>[자유게시판]</h2>
-
 	<h3>게시판 목록</h3>
 	<div>
 		<form action='boardSearch.do' id='frd' method='get'>
