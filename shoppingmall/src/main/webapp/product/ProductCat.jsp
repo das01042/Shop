@@ -32,6 +32,9 @@ border-width:2px;
 margin:5px;
 }
 
+.h2{
+margin : 20px 108px
+}
 </style>
 </head>
 <body>
@@ -45,7 +48,7 @@ margin:5px;
 	<jsp:include page="../loginmenu.jsp"></jsp:include>	
 	<jsp:include page="productHeader.jsp"></jsp:include>
 
-	</form>	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
 <%
 	} else if(id.equals("admin")) {
 	%>
@@ -66,8 +69,8 @@ margin:5px;
 		<%
 		}
 	%>
-	<br><br>
-	<h2> [고양이] </h2>
+	<br><br><br>
+	<h2 class="h2"> [고양이] </h2>
 <section>
       <div class="outProduct">
 <% productService service = new productService();

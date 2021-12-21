@@ -31,6 +31,9 @@ border-style: inset;
 border-width:2px;
 margin:5px;
 }
+.h2{
+margin : 20px 108px
+}
 
 html{
 background-color:black;
@@ -148,6 +151,7 @@ background-color:black;
   <div class="flux">Shop </div>
 </div>
 
+	<br><br><br>
 <section>
       <div class="outProduct">
 <% productService service = new productService();

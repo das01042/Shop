@@ -20,6 +20,20 @@
     border : 0;
     float: right;
 }
+.logout li>a{
+	text-decoration-line : none;
+	border-radius: 5px;
+	background-color: rgb(48, 190, 179);
+	color: white;
+	font-size: 14px;
+	padding : 2px;
+}
+.logout li>a:hover{
+	
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
+}
 </style>
 <body>
 <div class="logout">
