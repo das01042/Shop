@@ -10,9 +10,29 @@
 <meta charset="UTF-8">
 <title>제품 상세 조회</title>
 <style>
+.product {
+display:block;
+height:400px;
+width:1300px;
+border: 2px solid gray;
+margin-left:105px;
+}
+.product>div{
+display:flex;
+}
+.product_all{
+width:400px;
+text-align:center;
+margin-left:200px;
+
+}
+.product_all>div{
+border: 2px solid gray;
+margin: 20px;
+}
 
 </style>
-<script >
+<script>
 
 function fnCart(name, price) {
 	//alert("Name : " + name + "\nPrice : " + price);
@@ -46,70 +66,56 @@ function fnCart(name, price) {
 		<%
 	} else{
 		%><jsp:include page="../logoutmenu.jsp"></jsp:include>
-		<jsp:include page="../searchmenu.jsp"></jsp:include><%
+		<%
 				
 	}
-%>
-		<jsp:include page="productHeader.jsp"></jsp:include>
+%>	<jsp:include page="productHeader.jsp"></jsp:include>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<br><br><br><br>
 		
-	<table id='product'>
-		<tr>
-			<th>상품이미지</th>
-			<td> <img src="upload/<%=vo.getImage()%>" width="70"></td>
-		</tr>
-		<tr>
-			<th>상품이름</th>
-			<td><%=vo.getpName()%></td>
-		</tr>
-		<tr>
-			<th>상품설명</th>
-			<td><%=vo.getpDesc()%></td>
-		</tr>
-		
-		<tr>
-			<th>원래가격</th>
-			<td><%=vo.getOriginPrice()%></td>
-		</tr>
-		<%if(vo.getSalePrice()!=0){ %>
-		<tr>
-			<th>할인가격</th>
-			<td><%=vo.getSalePrice()%></td>
-		</tr>
-		<%} %>
-		<tr>
-			<th>별점</th>
-			<td><%=vo.getStar()%></td>
-		</tr>
-		<tr>
-			<th>수량</th>
-			<td><%=vo.getCount()%></td>
-		</tr>
+	<div class="product">
+<div class="product_image">
+<img src="upload/<%=vo.getImage() %>" width=350px height=400px>
+<c:set var="id" value="${sessionScope.id }"></c:set>
+      <c:if test="${id!='admin' && id!=null }">
+	  <input type='image' src="image/장바구니.png" width="100px" height="100px" onclick="fnCart( '<%=vo.getpName() %>' , <%=vo.getSalePrice() %> )" >
+	  </c:if>
 
-
-		<tr>
-		 <td>
+ <div class="product_all">
+ <div class="product_name">제품명 : <%=vo.getpName() %></div>
+ <div class="product_desc">제품설명 : <%=vo.getpDesc() %></div>
+ <div class="product_price">
+<%if(vo.getSalePrice()==0){ 
+			%>
+			<div class="Price">
+	       가격 : <%=vo.getOriginPrice()%>원
+			  </div> <%
+			}else{
+				%>
+          <div class="Price">
+		  가격 : <span style="text-decoration: line-through !important"><%=vo.getOriginPrice()%>원</span>
+       <%=vo.getSalePrice()%>원
+		  </div>
+			<%
+			}%>
+			</div>
+ <div class="product_star"></div>
+ <div class="product_count">수량 : <%=vo.getCount() %></div>
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=vo.getpName() %>'>
       <input type='hidden' name='job' value='update'>
       <input type='hidden' value='수정' id='update'>
       </form>
-      </td>
-      <td>
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=vo.getpName() %>'>
       <input type='hidden' name='job' value='delete'>
       <input type='hidden' value='삭제' id='delete'>
       </form>
-      </td>
-       <c:set var="id" value="${sessionScope.id }"></c:set>
-      <c:if test="${id!='admin' && id!=null }">
-	  <td>
-	  <input type='image' src="image/장바구니.png" width="100" onclick="fnCart( '<%=vo.getpName() %>' , <%=vo.getSalePrice() %> )" >
-	  </td>
-	  </c:if>
-      </tr>
-	</table>
-	
+       
+	</div>
+</div>
+</div>
+<br><br>
 	<c:if test="${id!=null}">
 	 <!-- =============================댓글 등록 및 리스트================================ -->
 	<%List<PcommentVO> pvo =(List<PcommentVO>) request.getAttribute("Pcomment"); %>
