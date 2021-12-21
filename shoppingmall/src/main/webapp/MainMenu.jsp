@@ -6,36 +6,23 @@
 <meta charset="UTF-8">
 <title>메인메뉴</title>
 <style>
-nav{
-	width: 70%;
-	height: 120px;
-	text-align: center;
-	
-	
-}
 /* 기본 설정*/
 a {
-	
 	float: center;
 	text-decoration: none;
-	color: black;
-	
-}
-body>nav>ul>li>ul>li>a{
-	width : 100px;
-	height: 30px;
+	color: #000000;
 }
 
-li>a:hover {
-	color: white;
+a:hover {
+	color: #ff0000;
 } /* nav tag */
-nav ul {
-	padding-top: 25px;
+.main nav ul {
+	padding-top: 10px;
 } /* 상단 여백 10px */
-nav ul ul{
+.main nav ul ul{
 	display:none;
 }
-nav  ul li:hover ul {
+.main nav  ul li:hover ul {
  display: block;
  padding-right:0;
 }
@@ -45,26 +32,22 @@ nav  ul li:hover ul {
 /* float:none; */
 /* margin-top:3px; */
 /* } */
-nav ul li {
+.main nav ul li {
 	float: left;
 	list-style-type: none;
-	
-	font: bold 16px;  /* 폰트 설정 - 12px의 돋움체 굵은 글씨로 표시 */
-	padding: 5px 0px; /* 각 메뉴 간격 */
-	background-color:rgb(120, 212, 206);
-	border-radius: 5px;
-	width: 100px;
-	
-	
+	border-left: 1px solid #999; /* 각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+	font: bold 16px Dotum; /* 폰트 설정 - 12px의 돋움체 굵은 글씨로 표시 */
+	padding: 0 10px; /* 각 메뉴 간격 */
 }
-
 </style>
 </head>
 <body>
+<div class="main">
 	<nav>
 		<ul>
 
 			<li><a href="${pageContext.request.contextPath }/product/ProductBig.jsp">대형인형</a></li>
+
 			<li><a href="${pageContext.request.contextPath }/product/ProductCharacter.jsp">캐릭터인형</a>
 				<ul>
 					<li><a href="${pageContext.request.contextPath }/product/ProductPoketmon.jsp">포켓몬스터</a></li>
@@ -85,6 +68,6 @@ nav ul li {
 			<li><a href="${pageContext.request.contextPath }/boardList.do">자유게시판</a></li>
 		</ul>
 	</nav>
-
+</div>
 </body>
 </html>

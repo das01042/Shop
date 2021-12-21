@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <style>
-ul {
+.logout ul {
     list-style:none;
     margin:0 30px;
     padding:0 300px 0 0;
 }
 
-li {
+.logout li {
 
     margin: 0 0 0 5px;
     padding: 0 0 0 0;
@@ -22,14 +22,12 @@ li {
 }
 </style>
 <body>
-<div>
+<div class="logout">
 <ul>
 		<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
 		<li><a href="${pageContext.request.contextPath }/member/memberInput.jsp">회원등록</a></li>
 		<li><a href="${pageContext.request.contextPath }/member/memberUpdate.jsp">마이페이지</a></li>
 		<li><a href="${pageContext.request.contextPath }/cart/cartList.jsp">장바구니</a></li>
-		
-
 
 	</ul>
 	</div>

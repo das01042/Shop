@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <style>
-ul {
+.login ul {
     list-style:none;
     margin:0 30px;
     padding:0 300px 0 0;
 }
 
-li {
+.login li {
 
     margin: 0 0 0 5px;
     padding: 0 0 0 0;
@@ -22,12 +22,12 @@ li {
 }
 </style>
 <body>
+<div class="login">
 <ul>
-		
-		
 		<li><a href="${pageContext.request.contextPath }/member/memberInput.jsp">회원가입</a></li>
 		<li><a href="${pageContext.request.contextPath }/login.jsp">로그인</a>
 
 	</ul>
+	</div>
 </body>
 </html>
