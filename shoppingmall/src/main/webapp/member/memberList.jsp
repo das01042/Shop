@@ -9,7 +9,7 @@
 <title>memberList.jsp</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="memberHeader.jsp"></jsp:include>
 	<jsp:include page="../adminmenu.jsp"></jsp:include>
 	
 	<c:choose>

@@ -8,9 +8,9 @@
 <title>boardList.jsp</title>
 <link rel="stylesheet" href="css/boardListStyle.css">
 <style>
-body {
+ body {
 	text-align: center;
-}
+} 
 
 .List {
 	width: 70%;

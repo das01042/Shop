@@ -15,7 +15,7 @@
 
 	} else {
 	%>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="memberHeader.jsp"></jsp:include>
 <%@ include file="../logoutmenu.jsp"%>
 	<a href='../index.jsp'>첫 페이지</a>
 	<h3>마이페이지</h3>
