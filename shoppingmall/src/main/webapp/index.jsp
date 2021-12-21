@@ -42,10 +42,10 @@ margin : 0px auto;
 	%>
 <jsp:include page="adminmenu.jsp"></jsp:include>
 	<jsp:include page="header.jsp"></jsp:include>
-	<jsp:include page="searchmenu.jsp"></jsp:include>
 	<h3>관리자모드로 접속하셨습니다.</h3>
-	
 	<jsp:include page="MainMenu.jsp"></jsp:include>
+	<br><br><br>
+	<jsp:include page="SlideShow.jsp"></jsp:include>
 	<jsp:include page="product/productList.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<%

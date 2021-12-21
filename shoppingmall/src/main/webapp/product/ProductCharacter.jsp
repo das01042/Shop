@@ -22,13 +22,17 @@ function fnCart(name, price) {
 .outProduct {
 display : flex;
 flex-wrap: wrap;
-
+text-align:center;
+margin-left:105px;
 }
 .inProduct{
 width: 400px;
 border-style: inset;
 border-width:2px;
 margin:5px;
+}
+.h2{
+margin : 20px 108px
 }
 
 </style>
@@ -65,10 +69,12 @@ margin:5px;
 		<%
 		}
 	%>
-	<br><br>
-	<h2> [캐릭터인형] </h2>
+	<br><br><br>
+	<h2 class="h2"> [캐릭터인형] </h2>
 <section>
+	
       <div class="outProduct">
+      
 <% productService service = new productService();
 		List<productVO> list = service.searchAll();
       for(productVO p:list){  
