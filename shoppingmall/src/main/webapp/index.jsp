@@ -10,9 +10,7 @@
 h3{
 margin : 0px auto;
 }
-body > div.main > nav > ul > li:nth-child(3) > ul{
-	display: none;
-}
+
 </style>
 </head>
 <body>
@@ -34,7 +32,7 @@ body > div.main > nav > ul > li:nth-child(3) > ul{
 	<jsp:include page="loginmenu.jsp"></jsp:include>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="MainMenu.jsp"></jsp:include>
-	<br><br>
+	<br><br><br>
 	<jsp:include page="SlideShow.jsp"></jsp:include>
 	<jsp:include page="product/productList.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
@@ -57,6 +55,8 @@ body > div.main > nav > ul > li:nth-child(3) > ul{
 			<jsp:include page="header.jsp"></jsp:include>
 			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
 			<jsp:include page="MainMenu.jsp"></jsp:include>
+			<br><br><br>
+			<jsp:include page="SlideShow.jsp"></jsp:include>
 		<jsp:include page="product/productList.jsp"></jsp:include>
 		<jsp:include page="footer.jsp"></jsp:include>
 		<%
