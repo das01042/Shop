@@ -22,7 +22,8 @@ function fnCart(name, price) {
 .outProduct {
 display : flex;
 flex-wrap: wrap;
-
+text-align:center;
+margin-left:105px;
 }
 .inProduct{
 width: 400px;
@@ -85,13 +86,13 @@ margin:5px;
           <%if(p.getSalePrice()==0){ 
 			%>
 			<div class="Price">
-	       <%=p.getOriginPrice() %>
+	       <%=p.getOriginPrice()%>원
 			  </div> <%
 			}else{
 				%>
           <div class="Price">
-		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice() %></span>
-       <%=p.getSalePrice() %>
+		  <span style="text-decoration: line-through !important"><%=p.getOriginPrice()%>원</span>
+       <%=p.getSalePrice()%>원
 		  </div>
 			<%
 			}%>

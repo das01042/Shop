@@ -60,7 +60,6 @@ margin : 0px auto;
 		}
 	%>
 
-<a href="${pageContext.request.contextPath }/boardList.do">게시판 임시</a>
 	
 </body>
 </html>

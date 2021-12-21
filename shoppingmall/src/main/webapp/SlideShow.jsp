@@ -5,155 +5,55 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <style>
- /* Slideshow container */
-.slideshow-container {
-  max-width: 150px;
-  position: relative;
-  margin: auto;
-  margin-top: 120px;
-}
-.slideshow-container div img{
-width:150px;
-}
-/* effect */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;	
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-</style>
-
-<script type="text/javascript">
-$(document).ready(function () {
-	$(".mySlideDiv").not(".active").hide(); //화면 로딩 후 첫번째 div를 제외한 나머지 숨김
-	jQuery.noConflict();
-	
-	setInterval(nextSlide, 4000); //4초(4000)마다 다음 슬라이드로 넘어감
-});
-
-//이전 슬라이드
-function prevSlide() {
-	$(".mySlideDiv").hide(); //모든 div 숨김
-	var allSlide = $(".mySlideDiv"); //모든 div 객체를 변수에 저장
-	var currentIndex = 0; //현재 나타난 슬라이드의 인덱스 변수
-	
-	//반복문으로 현재 active클래스를 가진 div를 찾아 index 저장
-	$(".mySlideDiv").each(function(index,item){ 
-		if($(this).hasClass("active")) {
-			currentIndex = index;
-		}
-        
-	});
-	
-	//새롭게 나타낼 div의 index
-	var newIndex = 0;
-    
-	if(currentIndex <= 0) {
-		//현재 슬라이드의 index가 0인 경우 마지막 슬라이드로 보냄(무한반복)
-		newIndex = allSlide.length-1;
-	} else {
-		//현재 슬라이드의 index에서 한 칸 만큼 뒤로 간 index 지정
-		newIndex = currentIndex-1;
-	}
-
-	//모든 div에서 active 클래스 제거
-	$(".mySlideDiv").removeClass("active");
-    
-	//새롭게 지정한 index번째 슬라이드에 active 클래스 부여 후 show()
-	$(".mySlideDiv").eq(newIndex).addClass("active");
-	$(".mySlideDiv").eq(newIndex).show();
-
-}
-
-//다음 슬라이드
-function nextSlide() {
-	$(".mySlideDiv").hide();
-	var allSlide = $(".mySlideDiv");
-	var currentIndex = 0;
-	
-	$(".mySlideDiv").each(function(index,item){
-		if($(this).hasClass("active")) {
-			currentIndex = index;
-		}
-        
-	});
-	
-	var newIndex = 0;
-	
-	if(currentIndex >= allSlide.length-1) {
-		//현재 슬라이드 index가 마지막 순서면 0번째로 보냄(무한반복)
-		newIndex = 0;
-	} else {
-		//현재 슬라이드의 index에서 한 칸 만큼 앞으로 간 index 지정
-		newIndex = currentIndex+1;
-	}
-
-	$(".mySlideDiv").removeClass("active");
-	$(".mySlideDiv").eq(newIndex).addClass("active");
-	$(".mySlideDiv").eq(newIndex).show();
-	
-}
-
-</script>
-
-
+<style>
+.slide {margin:0;padding:0;}
+.slide ul,li{list-style:none;}
+    .slide{height:300px;overflow:hidden;}
+    .slide ul{width:calc(100% * 4);display:flex;animation:slide 18s infinite;} /* slide를 8초동안 진행하며 무한반복 함 */
+    .slide li{width:calc(100% / 4);height:300px;}
+    .slide li:nth-child(1){background:#ffa;}
+    .slide li:nth-child(2){background:#faa;}
+    .slide li:nth-child(3){background:#afa;}
+    .slide li:nth-child(4){background:#aaf;}
+  	.slide img {width:100%; height:100%;}
+    @keyframes slide {
+      0% {margin-left:0;} /* 0 ~ 10  : 정지 */
+      10% {margin-left:0;} /* 10 ~ 25 : 변이 */
+      25% {margin-left:-100%;} /* 25 ~ 35 : 정지 */
+      35% {margin-left:-100%;} /* 35 ~ 50 : 변이 */
+      50% {margin-left:-200%;}
+      60% {margin-left:-200%;}
+      75% {margin-left:-300%;}
+      85% {margin-left:-300%;}
+      100% {margin-left:0;}
+    }
+  </style>
 </head>
 <body>
-  <div class="slideshow-container">
+<div class="slide">
+  <ul>
 
-     <div class="mySlideDiv fade active">
-        <img src="upload/kakao1.png"> 
-     </div>
-            
-     <div class="mySlideDiv fade">
-         <img src="upload/kakao2.png"> 
-     </div>
-            
-     <div class="mySlideDiv fade">
-         <img src="upload/kakao3.png"> 
-     </div>
-
-     <a class="prev" onclick="prevSlide()">&#10094;</a>
-     <a class="next" onclick="nextSlide()">&#10095;</a>
-            
+		<li>
+		<a href="http://localhost/shoppingmall/product/ProductJJanggu.jsp">
+        <img src="upload/슬라이드1.png" > 
+        </a>
+        </li>  
+        <li>
+         <a href="http://localhost/shoppingmall/product/ProductPoketmon.jsp">
+        <img src="upload/슬라이드2.png" > 
+        </a>
+        </li>
+        <li>    
+         <a href="http://localhost/shoppingmall/product/ProductBig.jsp">
+        <img src="upload/슬라이드3.png" > 
+        </a>
+     	</li>
+     	<li>    
+         <a href="http://localhost/shoppingmall/product/ProductDoraemong.jsp">
+        <img src="upload/슬라이드4.png" > 
+        </a>
+     	</li>
+</ul>
 </div>
 </body>
 </html>
