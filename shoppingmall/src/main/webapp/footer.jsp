@@ -7,10 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>
-국산 무기 K-9 자주포의 호주 수출 계약이 체결됐습니다.
-
-
-</h1>
+	<div class="title_footer">
+	<img src="http://localhost/shoppingmall/upload/슈퍼마리오.gif">
+	</div>
 </body>
 </html>
