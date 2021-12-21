@@ -30,9 +30,23 @@ margin-left:200px;
 border: 2px solid gray;
 margin: 20px;
 }
+.product_star{
+background-color: black;
+}
+.star {
+color:yellow;
+}
+
+.blinking{ -webkit-animation:blink 1.5s ease-in-out infinite alternate;
+-moz-animation:blink 1.5s ease-in-out infinite alternate; 
+animation:blink 1.5s ease-in-out infinite alternate; } 
+@-webkit-keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} } 
+@-moz-keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} }
+ @keyframes blink{ 0% {opacity:0;} 100% {opacity:1;} }
 
 </style>
 <script>
+
 
 function fnCart(name, price) {
 	//alert("Name : " + name + "\nPrice : " + price);
@@ -40,7 +54,9 @@ function fnCart(name, price) {
 		location.href = "cart/cartInput.jsp?name=" + name + "&price=" + price;
 	}
 }
+
 </script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 
@@ -69,7 +85,7 @@ function fnCart(name, price) {
 		<%
 				
 	}
-%>	<jsp:include page="productHeader.jsp"></jsp:include>
+%>	<jsp:include page="../header.jsp"></jsp:include>
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
 	<br><br><br><br>
 		
@@ -99,7 +115,21 @@ function fnCart(name, price) {
 			<%
 			}%>
 			</div>
- <div class="product_star"></div>
+ <div class="product_star">
+ <%
+ int first = (int)vo.getStar();
+ for(int i = 0; i<first; i++){
+ %> <span class="star blinking""><i class='fas fa-star'></i></span>
+	<% 
+ }
+ double last = vo.getStar() - (int)vo.getStar();
+ if(last > 0){
+	 %> <span class="star"><i class='fas fa-star-half-alt'></i></span> 
+		<% 
+ }
+ 
+ %>
+ </div>
  <div class="product_count">수량 : <%=vo.getCount() %></div>
       <form action='productSearch.do' method='get'>
       <input type='hidden' name='pName' value='<%=vo.getpName() %>'>

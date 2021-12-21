@@ -18,7 +18,6 @@ function fnCart(name, price) {
 }
 </script>
 <style>
-
 .outProduct {
 display : flex;
 flex-wrap: wrap;
@@ -31,17 +30,19 @@ border-style: inset;
 border-width:2px;
 margin:5px;
 }
-.h2{
-margin : 20px 108px
-}
 
-html{
-background-color:black;
-}
+
 
 @font-face {
   font-family: neon;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.black {
+background-color:black;
+width:700px;
+margin: 0 500px;
+border-radius:100px;
 }
 
 .container {
@@ -146,11 +147,12 @@ background-color:black;
 		}
 	%>
 	<br><br>
+	<div class="black">
 	<div class="container">
   <div class="neon">1000 </div>
   <div class="flux">Shop </div>
 </div>
-
+</div>
 	<br><br><br>
 <section>
       <div class="outProduct">
