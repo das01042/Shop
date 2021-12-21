@@ -14,7 +14,7 @@
 <jsp:include page="productHeader.jsp"></jsp:include>
 
 
-	<!-- ==================== 상품 상세조회 ========================= -->
+	<!-- ==================== 입력한 상품 ========================= -->
 	<%
 	/* Integer.parseInt("");  */
 	productVO vo = (productVO) request.getAttribute("product");

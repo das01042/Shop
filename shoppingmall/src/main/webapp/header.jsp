@@ -16,8 +16,16 @@
 	border: rgb(48, 190, 179) 3px solid;
 }
 #s_input2{
+	border : 1px solid white;
+	border-radius: 5px;
 	background-color: rgb(48, 190, 179);
 	color: azure;
+	
+}
+#s_input2:hover{
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
 }
 </style>
 </head>

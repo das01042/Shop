@@ -12,6 +12,11 @@
 	margin-left: 300px;
 	width: 1100px;
 }
+.search_input:hover{
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
+}
 
 </style>
 </head>

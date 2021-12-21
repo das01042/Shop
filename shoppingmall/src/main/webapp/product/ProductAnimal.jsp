@@ -32,6 +32,10 @@ border-width:2px;
 margin:5px;
 }
 
+.h2{
+margin : 20px 108px
+}
+
 </style>
 </head>
 <body>
@@ -65,8 +69,8 @@ margin:5px;
 		<%
 		}
 	%>
-	<br><br>
-	<h2> [동물 인형] </h2>
+	<br><br><br>
+	<h2 class="h2"> [동물 인형] </h2>
 <section>
       <div class="outProduct">
 <% productService service = new productService();

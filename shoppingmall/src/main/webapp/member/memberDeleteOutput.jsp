@@ -15,7 +15,7 @@
 
 	} else {
 	%>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="memberHeader.jsp"></jsp:include>
 <jsp:include page="../adminmenu.jsp"></jsp:include>
 	<%
 	memberVO vo = (memberVO) request.getAttribute("member");

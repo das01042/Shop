@@ -21,14 +21,28 @@
     border : 0;
     float: right;
 }
+.adminmenu li>a{
+	text-decoration-line : none;
+	border-radius: 5px;
+	background-color: rgb(48, 190, 179);
+	color: white;
+	font-size: 14px;
+	padding : 2px;
+}
+.adminmenu li>a:hover{
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
+}
+
         </style>
 <body>
 <div class="adminmenu">
-	<ul>
-	<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
-	<li><a href="${pageContext.request.contextPath }/adminUser.jsp">회원관리</a>
-	<li><a href="${pageContext.request.contextPath }/adminProduct.jsp">상품관리</a>
-    </ul>
+		<ul>
+			<li><a href="${pageContext.request.contextPath }/logout.do">로그아웃</a>
+			<li><a href="${pageContext.request.contextPath }/adminUser.jsp">회원관리</a>
+			<li><a href="${pageContext.request.contextPath }/adminProduct.jsp">상품관리</a>
+	    </ul>
     </div>
 </body>
 </html>

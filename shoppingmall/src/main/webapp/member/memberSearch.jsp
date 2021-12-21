@@ -14,7 +14,7 @@
 
 	} else {
 	%>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="memberHeader.jsp"></jsp:include>
 <jsp:include page="../adminmenu.jsp"></jsp:include>
 	<h3>회원검색</h3>
 	<form action='../memberSearch.do' method='get'>

@@ -9,7 +9,7 @@
 <title>입력값 출력</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"></jsp:include>
+<jsp:include page="memberHeader.jsp"></jsp:include>
 <jsp:include page="../loginmenu.jsp"></jsp:include>
 	<%
 	/* Integer.parseInt("");  */

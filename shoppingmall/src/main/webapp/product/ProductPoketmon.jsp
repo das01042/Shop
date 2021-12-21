@@ -31,6 +31,9 @@ border-style: inset;
 border-width:2px;
 margin:5px;
 }
+.h2{
+margin : 20px 108px
+}
 
 </style>
 </head>
@@ -65,8 +68,8 @@ margin:5px;
 		<%
 		}
 	%>
-	<br><br>
-	<h2> [포켓몬스터] </h2>
+	<br><br><br>
+	<h2 class="h2"> [포켓몬스터] </h2>
 <section>
       <div class="outProduct">
 <% productService service = new productService();

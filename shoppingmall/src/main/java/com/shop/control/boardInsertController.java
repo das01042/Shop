@@ -1,6 +1,7 @@
 package com.shop.control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +27,18 @@ public class boardInsertController implements Controller {
 		
 		
 		boardService service = new boardService();
-		service.insert(vo);
 		
-		req.setAttribute("board", vo);
-		req.getRequestDispatcher("board/boardOutput.jsp").forward(req, res);
+		if(writer.equals("")||title.equals("")||content.equals("")) {
+			res.setContentType("text/html; charset=utf-8");
+			PrintWriter	out = res.getWriter();
+			out.println("<script>alert('다 채워주세요'); "
+					+ "history.back();</script>");
+			out.flush();
+		}else {
+			service.insert(vo);
+			req.setAttribute("board", vo);
+			req.getRequestDispatcher("board/boardOutput.jsp").forward(req, res);
+		}
 	}
 
 }

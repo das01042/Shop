@@ -19,6 +19,21 @@
     padding: 0 0 0 0;
     border : 0;
     float: right;
+    
+}
+.login li>a{
+	text-decoration-line : none;
+	border-radius: 5px;
+	background-color: rgb(48, 190, 179);
+	color: white;
+	font-size: 14px;
+	padding : 2px;
+}
+.login li>a:hover{
+	
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
 }
 </style>
 <body>
