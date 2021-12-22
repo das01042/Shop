@@ -49,7 +49,7 @@
 </head>
 <body>
 	<jsp:include page="../loginmenu.jsp"></jsp:include>
-	<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="memberHeader.jsp"></jsp:include>
 
 
 

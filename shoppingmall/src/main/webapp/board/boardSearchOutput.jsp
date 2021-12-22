@@ -9,10 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>boardSearchOutput.jsp</title>
+
 <style>
+
 .C_Form{
 display: inline-block;
 }
+
 </style>
 <script>
 function reload(){
@@ -43,14 +46,16 @@ function reload(){
 	<br><br>
 	<%boardVO vo =(boardVO) request.getAttribute("board"); %>
 	<div class="containerBox">
+		<div class="board_list">
 			<div class="Header">
 				<div class="H_No">[번호 : <%=vo.getNo() %>]</div>
 				<div class="H_title">제목 : <%=vo.getTitle() %></div>
-				<div class="H_writer">작성자 : <%=vo.getWriter() %></div>		
+				<div class="H_writer">작성자 : <%=vo.getWriter() %></div>	
 			</div>
-			<div class="C_content">내용: <%=vo.getContent() %></div>
-			
-			
+			<div class="C_content">내용: <%=vo.getContent() %></div>	
+			</div>
+			<br>
+	<div class = "board_btn">		
 <!--==========================수정===============================  -->
 	<form action='boardSearch.do' method='get' class="C_Form">
 		<input type = 'hidden' name='no' value='<%=vo.getNo() %>'>
@@ -65,13 +70,14 @@ function reload(){
 		<input type ='hidden' name ='id' value='<%=vo.getWriter() %>'>
 		<input type= 'submit' value='삭제' class="F_submit">
 	</form>
+	</div>
 	<%List<commentVO> cvo =(List<commentVO>) request.getAttribute("comment"); %>
 <!-- =============================댓글 등록 및 리스트================================ -->
-	
+	<div class="C_list">
 	<form method="post" action="boardComment.do">
 	<input type="hidden" name="no" value='<%=vo.getNo()%>'>
 	<input type="hidden" name="job" value="search">
-		<table>
+		<table class="C_table">
 			<tr>
 				<td colspan="2" align="left">
 					<b>댓글</b>
@@ -88,7 +94,7 @@ function reload(){
 			</tr>
 			</table>
 				</form>
-			<table>
+			<table class="C_table">
 			<tr>
 				<td>닉네임</td>
 				<td colspan="2">내용</td>
@@ -118,7 +124,7 @@ function reload(){
 			</c:forEach>
 			
 	</table>
-
+	</div>
 	</div>
 			
 	

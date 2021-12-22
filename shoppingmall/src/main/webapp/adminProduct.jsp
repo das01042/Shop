@@ -9,12 +9,9 @@
 <body>
 <div class="adminproduct">
 	<ul>
-		<li><a
-			href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록</a></li>
-		<li><a
-			href="${pageContext.request.contextPath }/product/productUpdate.jsp">상품수정</a></li>
-		<li><a
-			href="${pageContext.request.contextPath }/product/productDelete.jsp">상품삭제</a></li>
+		<li><a href="${pageContext.request.contextPath }/product/productInput.jsp">상품등록</a></li>
+		<li><a href="${pageContext.request.contextPath }/product/productUpdate.jsp">상품수정</a></li>
+		<li><a href="${pageContext.request.contextPath }/product/productDelete.jsp">상품삭제</a></li>
 	</ul>
 	</div>
 </body>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <style>
 .fullheader{
+border-radius: 10px;
 background:linear-gradient(white, lightCyan, rgb(109, 245, 255), rgb(148, 236, 229));
 }
 .header{
@@ -19,7 +20,7 @@ background:linear-gradient(white, lightCyan, rgb(109, 245, 255), rgb(148, 236, 2
 	border: rgb(48, 190, 179) 3px solid;
 }
 #s_input2{
-	border : 1px solid white;
+	border : 1px solid rgb(48, 190, 179);
 	border-radius: 5px;
 	background-color: rgb(48, 190, 179);
 	color: azure;
@@ -48,7 +49,7 @@ border-radius: 7px;
 				src="http://localhost/shoppingmall/upload/head.png">
 			</a>
 			</td>
-			<td width="550px">
+			<td width="400px">
 			</td>
 			<td>
 			<form class="search_menu" action='productSearchTool.do' method='get'>

@@ -24,7 +24,6 @@
 	<%
 	memberVO vo = (memberVO) request.getAttribute("member");
 	%>
-	<a href='index.jsp'>첫 페이지</a>
 	<h3>회원 상세 정보</h3>
 	<%
 	if (vo == null) {
@@ -36,7 +35,7 @@
 	<table>
 		<tr>
 			<th>회원아이디</th>
-			<td><%=concat("아이디는 ",vo.getId())%></td>
+			<td><%=vo.getId()%></td>
 		</tr>
 		<tr>
 			<th>비밀번호</th>

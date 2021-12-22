@@ -12,14 +12,10 @@
 			float: center;
 			text-decoration: none;
 			color: black;
-			
 		}
-
 		.main a:hover {
 			color: white;
 		}
-
-		
 		.main nav ul {
 			padding-top: 1px;
 		}

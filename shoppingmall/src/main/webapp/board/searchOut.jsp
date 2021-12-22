@@ -10,6 +10,55 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+ body {
+	text-align: center;
+} 
+
+.List {
+	width: 70%;
+	height: 30vh;
+	margin: 0px 250px;
+}
+
+.List th {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.actionTd {
+	cursor: pointer;
+}
+
+.List td {
+	border-bottom: 1px dotted gray;
+}
+
+.List_no {
+	
+}
+.a{
+margin : 0px 325px; 
+float : right;
+	text-decoration :none;
+	border : 1px solid rgb(48, 190, 179);
+	border-radius: 5px;
+	background-color: rgb(48, 190, 179);
+	color: azure;
+	
+}
+.a:hover{
+	background-color: rgb(48, 190, 179);
+	color : black;
+	cursor: pointer;
+}
+
+
+
+
+
+
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -32,7 +81,7 @@ $(document).ready(function(){
 		  <input type='hidden' name="job" value='search'>
 		  <input type ='hidden' name ='id' value='<%=id %>'>
 	<input type='hidden' name='no' id='no'>
-	<table border = '1'>
+	<table class = "List">
 	<thead>
 	<tr>
 	<th>번호</th>
@@ -57,14 +106,14 @@ $(document).ready(function(){
 				
 				<c:forEach var="item" items="${requestScope.board }">
 				<tr>
-					<td>${item.no }</td>
+					<td class="List_no">${item.no }</td>
 					<td class='actionTd'>${item.title }</td>
-					<td>${item.writer }</td>
+					<td class="List_writer">${item.writer }</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	</form>
-	<a href="boardList.do">게시판으로 돌아가기</a>
+	<a class="a" href="boardList.do">게시판으로 돌아가기</a>
 </body>
 </html>
