@@ -16,6 +16,8 @@ public class productSearchController implements Controller {
 
 	@Override
 	public void excute(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+	      
 		String pname = req.getParameter("pName");
 		String job = req.getParameter("job");
 		

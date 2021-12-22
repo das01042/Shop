@@ -137,12 +137,12 @@ function fnCart(name, price) {
  <%
  int first = (int)vo.getStar();
  for(int i = 0; i<first; i++){
- %> <span class="star blinking""><i class='fas fa-star'></i></span>
+ %> <span class="star blinking"><i class='fas fa-star'></i></span>
 	<% 
  }
  double last = vo.getStar() - (int)vo.getStar();
  if(last > 0){
-	 %> <span class="star"><i class='fas fa-star-half-alt'></i></span> 
+	 %> <span class="star blinking"><i class='fas fa-star-half-alt'></i></span> 
 		<% 
  }
  
@@ -188,15 +188,9 @@ function fnCart(name, price) {
 			</table>
 				</form>
 				 </c:if>
-<<<<<<< HEAD
 				 
 			<table class="c_table" >
-=======
-				 <br><br>
-				 <b>상품 후기</b>
-				 <br><br>
-			<table>
->>>>>>> branch 'main' of https://github.com/das01042/Shop.git
+				
 			<tr>
 				<th>닉네임</th>
 				<th colspan="3">내용</th>
@@ -219,13 +213,9 @@ function fnCart(name, price) {
 				</tr>
 			
 			</c:forEach>
-<<<<<<< HEAD
-			</table >
-			</div>
 			
-=======
 			</table>
+			</div>
 			<jsp:include page="../footer.jsp"></jsp:include>
->>>>>>> branch 'main' of https://github.com/das01042/Shop.git
 </body>
 </html>

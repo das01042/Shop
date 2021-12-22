@@ -40,14 +40,15 @@ margin:5px;
 
 .black {
 background-color:black;
-width:700px;
+width:600px;
 margin: 0 500px;
 border-radius:100px;
+border: 5px solid red;
+
 }
 
 .container {
-	margin: 0, 200px
-  display: table-cell;
+	margin: 0, 200px;
   text-align: center;
   vertical-align: middle;
 }

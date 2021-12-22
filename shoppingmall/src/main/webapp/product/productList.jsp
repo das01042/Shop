@@ -36,7 +36,8 @@ margin-left:105px;
 .inProduct{
 width: 400px;
 border-style: inset;
-border-width:2px;
+border-color: rgb(48, 190, 179);
+border-width:3px;
 margin:5px;
 }
 

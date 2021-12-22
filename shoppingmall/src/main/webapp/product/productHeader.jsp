@@ -6,7 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
+.fullheader{
+background:linear-gradient(white, lightCyan, rgb(109, 245, 255), rgb(148, 236, 229));
+}
 .header{
 	margin-left :300px ;
 	width : 1100px;
@@ -30,12 +32,15 @@
 </style>
 </head>
 <body>
+<div class="fullheader">
 	<table class="header">
 		<tbody>
 		<tr>
 			<td>
-			<a href="http://localhost/shoppingmall/index.jsp"> <img
-				src="http://localhost/shoppingmall/upload/head.png">
+			<a href="http://localhost/shoppingmall/index.jsp"> <img style="
+			border: 3px solid gold;
+			border-radius: 7px;"
+			src="http://localhost/shoppingmall/upload/head.png">
 			</a>
 			</td>
 			<td width="550px">
@@ -48,5 +53,6 @@
 			</tr>
 		</tbody>
 	</table>
+	</div>
 </body>
 </html>
