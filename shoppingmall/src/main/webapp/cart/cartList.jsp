@@ -19,7 +19,21 @@ if(obj==null){ // 세션에 제품이 없으면 배열생성
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+.t_cart{
+border : 1px solid gray;
+}
+.t_cart th{
+border-bottom : 1px solid gray;
+}
 
+.t_cart td {
+border-bottom : 1px solid gray;
+}
+.td_last{
+ border-bottom: 1px solid white;
+}
+</style>
 <script type="text/javascript">
 
 function fnPay(){
@@ -40,9 +54,12 @@ function fnGo(){
 
 </head>
 <body>
-<div align="center">
+<jsp:include page="../header.jsp"></jsp:include>
+	<jsp:include page="../MainMenu.jsp"></jsp:include>
+	<br><br>
+<div align="center" class = "d_cart">
 	<h3>[장바구니 보기]</h3>
-	<table border="1">
+	<table class="t_cart" >
 		<tr>
 			<th>번호</th>
 			<th>상품이름</th>
@@ -80,7 +97,7 @@ function fnGo(){
 		}
 		%>
 		<tr align = 'center'>
-			<td colspan= '4'>
+			<td colspan= '4' class = "td_last">
 				<input type='button' value='결제하기' onclick='fnPay()' />
 				<input type='button' value='장바구니 비우기' onclick='fnClear()' />
 				<input type='button' value='쇼핑 계속하기' onclick='fnGo()' />
@@ -93,6 +110,7 @@ function fnGo(){
 			}//if else
 		%>
 	</table>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </div>
 </body>
 </html>

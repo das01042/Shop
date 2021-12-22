@@ -16,7 +16,6 @@
 %>
 
 <jsp:include page="../header.jsp"></jsp:include>
-	<jsp:include page="../loginmenu.jsp"></jsp:include>
 	<form action='../productSearchTool.do' method='get'>
 		검색: <input type='text' name='pName' placeholder="상품을 검색하세요."><br>
 			<input type='submit' value='검색'>

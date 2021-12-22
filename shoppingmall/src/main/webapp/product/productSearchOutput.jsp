@@ -36,6 +36,24 @@ background-color: black;
 .star {
 color:yellow;
 }
+.c_div{
+margin-left : 105px;
+width : 1300px;
+border : 2px solid gray;
+}
+.c_table{
+margin-top:10px;
+margin-bottom : 10px;
+margin-left: 300px;
+text-align : left;
+width :400px;
+}
+.c_table td{
+ border-bottom: 1px gray dotted;
+}
+.c_del_form>input{
+	float: right;
+}
 
 .blinking{ -webkit-animation:blink 1.5s ease-in-out infinite alternate;
 -moz-animation:blink 1.5s ease-in-out infinite alternate; 
@@ -146,13 +164,15 @@ function fnCart(name, price) {
 </div>
 </div>
 <br><br>
+	<div class="c_div">
 	<c:if test="${id!=null}">
 	 <!-- =============================댓글 등록 및 리스트================================ -->
+	 
 	<%List<PcommentVO> pvo =(List<PcommentVO>) request.getAttribute("Pcomment"); %>
 	<form method="post" action="ProductComment.do">
 	<input type="hidden" name="pName" value='<%=vo.getpName() %>'>
 	<input type="hidden" name="job" value="search">
-		<table>
+		<table class="c_table" >
 			<tr>
 				<td colspan="2" align="left">
 					<b>상품 후기</b>
@@ -167,20 +187,21 @@ function fnCart(name, price) {
 			</table>
 				</form>
 				 </c:if>
-			<table>
+				 
+			<table class="c_table" >
 			<tr>
-				<td>닉네임</td>
-				<td colspan="2">내용</td>
+				<th>닉네임</th>
+				<th colspan="3">내용</th>
 			
 			<c:forEach var="item" items="${requestScope.Pcomment }">
 				<tr>
-					<td>${item.pcommentWriter }</td>
-					<td colspan="2">${item.pcommentCont }</td>
+					<td class="c_table_td2">${item.pcommentWriter }</td>
+					<td class="c_table_td2" colspan="2">${item.pcommentCont }</td>
       <!-- =============================후기 리스트, 삭제 =========================-->
       <c:set var="id" value="${sessionScope.id }"></c:set>
       <c:set var="p_id" value="${item.pcommentWriter }"></c:set>
       <c:if test="${id=='admin' || id==p_id}">
-      <td> <form action='PcommentDelete.do' method='get' >
+      <td> <form class="c_del_form" action='PcommentDelete.do' method='get' >
 						<input type = 'hidden' name='pcomment_no' value='${item.pcommentNo }'>
 						<input type = 'hidden' name='pName' value='${item.pcommentPname }'>
 						<input type = 'hidden' name ='job' value='search'>
@@ -190,6 +211,8 @@ function fnCart(name, price) {
 				</tr>
 			
 			</c:forEach>
-			</table>
+			</table >
+			</div>
+			
 </body>
 </html>
