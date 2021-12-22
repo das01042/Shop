@@ -71,8 +71,7 @@ margin:5px;
       
 <% 
 	List<productVO> list = (List<productVO>) request.getAttribute("product");
-	
-      for(productVO p:list){  %>
+      for(productVO p:list){ %>
 	<div class="inProduct">
       <div class="image">
           <img src="upload/<%=p.getImage()%>" width="70" >
@@ -118,6 +117,6 @@ margin:5px;
 </div>
 </section>
 
-
+<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

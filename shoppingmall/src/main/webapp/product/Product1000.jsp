@@ -125,10 +125,7 @@ border-radius:100px;
 	%>
 	<jsp:include page="../adminmenu.jsp"></jsp:include>
 	<jsp:include page="productHeader.jsp"></jsp:include>
-	<form class="search_menu" action='../productSearchTool.do' method='get'>
-			<input type='text' name='pName' placeholder="상품을 검색하세요.">
-			<input type='submit' value='검색'>
-	</form>
+	
 	<h3>관리자모드로 접속하셨습니다.</h3>
 	
 	<jsp:include page="../MainMenu.jsp"></jsp:include>
@@ -137,10 +134,7 @@ border-radius:100px;
 			%> 
 			<jsp:include page="../logoutmenu.jsp"></jsp:include>
 			<jsp:include page="productHeader.jsp"></jsp:include>
-			<form class="search_menu" action='../productSearchTool.do' method='get'>
-			<input type='text' name='pName' placeholder="상품을 검색하세요.">
-			<input type='submit' value='검색'>
-			</form>
+			
 			<h3><%=session.getAttribute("name") %>고객님, 환영합니다~</h3>
 			<jsp:include page="../MainMenu.jsp"></jsp:include>
 		<%

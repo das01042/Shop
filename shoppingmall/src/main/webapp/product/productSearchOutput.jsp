@@ -175,6 +175,7 @@ function fnCart(name, price) {
 		<table class="c_table" >
 			<tr>
 				<td colspan="2" align="left">
+				<br><br>
 					<b>상품 후기</b>
 				</td>
 			</tr>
@@ -187,8 +188,15 @@ function fnCart(name, price) {
 			</table>
 				</form>
 				 </c:if>
+<<<<<<< HEAD
 				 
 			<table class="c_table" >
+=======
+				 <br><br>
+				 <b>상품 후기</b>
+				 <br><br>
+			<table>
+>>>>>>> branch 'main' of https://github.com/das01042/Shop.git
 			<tr>
 				<th>닉네임</th>
 				<th colspan="3">내용</th>
@@ -211,8 +219,13 @@ function fnCart(name, price) {
 				</tr>
 			
 			</c:forEach>
+<<<<<<< HEAD
 			</table >
 			</div>
 			
+=======
+			</table>
+			<jsp:include page="../footer.jsp"></jsp:include>
+>>>>>>> branch 'main' of https://github.com/das01042/Shop.git
 </body>
 </html>
