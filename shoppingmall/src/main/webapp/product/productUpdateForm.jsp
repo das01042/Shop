@@ -22,7 +22,6 @@
 		별점 :<input type ='number' step='0.1' name ='star' value='<%=vo.getStar() %>'>><br>
 		이미지 :<input type ='file' name ='image' value='<%=vo.getImage() %>'>><br>
 		수량 :<input type ='number' name ='count' value='<%=vo.getCount() %>'>><br>
-		<input type='submit' value='상품등록'>
 		<input type='submit' value='수정'>
 	</form>
 	<%@ include file="../footer.jsp"%>

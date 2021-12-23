@@ -11,7 +11,7 @@ public class boardDAO extends DAO{
 	// 게시판 전체 조회
 	public List<boardVO> boardList(){
 		List<boardVO> list = new ArrayList<>();
-		String sql = "select * from board order by 1";
+		String sql = "select * from board order by 1 desc";
 		connect();
 		try {
 			stmt = conn.prepareStatement(sql);

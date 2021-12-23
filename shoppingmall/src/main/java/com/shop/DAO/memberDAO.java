@@ -158,9 +158,9 @@ public class memberDAO extends DAO{
 		//회원정보수정 .
 		public memberVO memberUpdate(memberVO vo) {
 			String sql="update member"
-					+ " set password= ?,"
-					+ " 	name =?,"
-					+ " 	email=?"
+					+ " set password= ?"
+					+ " ,name =?"
+					+ " ,email=?"
 					+ " where id =?";
 			connect();
 			try {

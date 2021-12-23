@@ -32,7 +32,7 @@
 	<h3>
 		입력한 평점 : <%=vo.getStar()%></h3>
 	<h3>
-		입력한 이미지 : <img src="image/<%=vo.getImage()%>" width="70"> </h3>
+		입력한 이미지 : <img src="upload/<%=vo.getImage()%>" width="70"> </h3>
 	<h3>
 		입력한 수량 : <%=vo.getCount()%></h3>	
 		
