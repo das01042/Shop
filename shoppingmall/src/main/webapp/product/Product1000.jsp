@@ -3,6 +3,7 @@
 <%@page import="com.shop.service.productService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,14 +37,15 @@ margin:5px;
 @font-face {
   font-family: neon;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  w
 }
 
 .black {
 background-color:black;
-width:600px;
-margin: 0 500px;
-border-radius:100px;
-border: 5px solid red;
+width:150px;
+margin: 0 850px;
+border : 6px brown solid;
+height: 90px;
 
 }
 
@@ -56,16 +58,16 @@ border: 5px solid red;
 .neon {
   font-family: neon;
   color: #FB4264;
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 2vw;
+  line-height: 2vw;
   text-shadow: 0 0 3vw #F40A35;
 }
 
 .flux {
   font-family: neon;
   color: #426DFB;
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 2vw;
+  line-height: 2vw;
   text-shadow: 0 0 3vw #2356FF;
 }
 
